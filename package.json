@@ -1,0 +1,48 @@
+{
+  "name": "threenity",
+  "version": "0.0.1",
+  "description": "A Three.js framework that takes inspiration from Unity",
+  "main": "./lib/main.js",
+  "scripts": {
+    "prepare": "npm run build",
+    "setup:hooks": "husky install && husky add .husky/pre-commit \"npm run precommit\"",
+    "precommit": "npm run format && npm run lint",
+    "lint": "eslint \"{src,test}/**/*.ts\" --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRayOfSeasons/Threenity.git"
+  },
+  "keywords": [
+    "Three.js",
+    "Framework.",
+    "3D"
+  ],
+  "files": [
+    "lib/**/*"
+  ],
+  "author": "Ray Lawrence Henri Sison",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheRayOfSeasons/Threenity/issues"
+  },
+  "homepage": "https://github.com/TheRayOfSeasons/Threenity#readme",
+  "devDependencies": {
+    "@types/three": "^0.138.0",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.5.1",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "three": "^0.138.3"
+  }
+}
