@@ -57,8 +57,9 @@ export default class RenderManager extends Manager {
       const canvas = this.canvasManager.canvas;
       const width = canvas.parentElement.clientWidth;
       const height = canvas.parentElement.clientHeight;
-      const camera = this.sceneManager.currentScene.currentCamera;
-      if (camera instanceof PerspectiveCamera) {
+      const camera = this.sceneManager.currentScene
+        .currentCamera as PerspectiveCamera;
+      if (camera.aspect) {
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
       }
