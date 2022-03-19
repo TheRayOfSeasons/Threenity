@@ -38,6 +38,7 @@ export default class SceneManager extends Manager {
     const scene = new SceneClass(...this.getManagers());
     this.currentScene = scene;
     this.currentSceneIndex = this.sceneNames[sceneName];
+    scene.setup();
     return scene;
   }
 
