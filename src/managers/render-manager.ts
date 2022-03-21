@@ -54,9 +54,8 @@ export default class RenderManager extends Manager {
 
   private setupResponsiveness(): void {
     const applyResponsiveness = () => {
-      const canvas = this.canvasManager.canvas;
-      const width = canvas.parentElement.clientWidth;
-      const height = canvas.parentElement.clientHeight;
+      const width = this.canvasManager.width;
+      const height = this.canvasManager.height;
       const camera = this.sceneManager.currentScene
         .currentCamera as PerspectiveCamera;
       if (camera.aspect) {

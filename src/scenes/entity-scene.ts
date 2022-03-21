@@ -78,6 +78,7 @@ export default class EntityScene extends Scene implements IEntityScene {
 
   /**
    * Setup renderer configurations. Override for more custom setup.
+   * Uses the parent element of the canvas as the basis of initial size.
    * @param {HTMLElement} canvas The current HTML Canvas
    * @param {WebGLRenderer} renderer The current renderer
    */

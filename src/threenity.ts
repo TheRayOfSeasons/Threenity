@@ -7,6 +7,8 @@ import RenderManager from './managers/render-manager';
 
 type ThreenityParameters = {
   canvas: HTMLElement;
+  responsive: boolean;
+  useParentSizeWhenResized: boolean;
   rendererClass?: RendererClass;
   rendererParams?: WebGLRendererParameters;
 };
@@ -22,7 +24,17 @@ export default class Threenity {
   protected renderManager: RenderManager;
 
   public constructor(args: ThreenityParameters) {
-    this.canvasManager = new CanvasManager(args.canvas);
+    if (typeof args.responsive === 'undefined') {
+      args.responsive = true;
+    }
+    if (typeof args.useParentSizeWhenResized === 'undefined') {
+      args.useParentSizeWhenResized = true;
+    }
+    this.canvasManager = new CanvasManager(
+      args.canvas,
+      args.useParentSizeWhenResized,
+      args.responsive,
+    );
     this.sceneManager = new SceneManager();
     if (!args.rendererClass) {
       args.rendererClass = WebGLRenderer;
