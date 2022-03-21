@@ -61,8 +61,8 @@ export default class RenderManager extends Manager {
         .currentCamera as PerspectiveCamera;
       if (camera.aspect) {
         camera.aspect = width / height;
-        camera.updateProjectionMatrix();
       }
+      camera.updateProjectionMatrix();
       this.renderer.setSize(width, height);
     };
     applyResponsiveness();
